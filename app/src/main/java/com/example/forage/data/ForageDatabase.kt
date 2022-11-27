@@ -36,7 +36,7 @@ abstract class ForageDatabase : RoomDatabase(){
         @Volatile
         private var INSTANCE: ForageDatabase? = null
 
-        fun getDatabase(): ForageDatabase {
+        fun getDatabase(context: Context): ForageDatabase {
             return INSTANCE ?: synchronized(this){
                 val instance = Room.databaseBuilder(
                     context.applicationContext,
